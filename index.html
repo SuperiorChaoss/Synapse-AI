@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$SYNAPSE - AI-Powered Trading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="Circle Monogram Logo  (4).png" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .header {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #2c003e, #121212);
+        }
+        .header h1 {
+            font-size: 4em;
+            color: #9b4dff;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #9b4dff, 0 0 20px #9b4dff; }
+            to { text-shadow: 0 0 20px #9b4dff, 0 0 40px #9b4dff; }
+        }
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.5em;
+            color: #9b4dff;
+            animation: glowText 1.5s infinite alternate;
+        }
+        @keyframes glowText {
+            from { text-shadow: 0 0 10px #9b4dff, 0 0 20px #9b4dff; }
+            to { text-shadow: 0 0 30px #9b4dff, 0 0 40px #9b4dff; }
+        }
+        .section p {
+            font-size: 1.2em;
+            color: #bbb;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            background: transparent;
+            color: #9b4dff;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid #9b4dff;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .button:hover {
+            background: #9b4dff;
+            color: #121212;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #9b4dff;
+        }
+        .tokenomics {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .tokenomics-box {
+            background: #2c003e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 10px #9b4dff;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .tokenomics-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #9b4dff;
+        }
+        .faq {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 20px;
+            text-align: left;
+        }
+        .faq h2 {
+            text-align: center;
+            color: #9b4dff;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            background: #2c003e;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #9b4dff;
+        }
+        .faq-item h3 {
+            color: #9b4dff;
+            cursor: pointer;
+        }
+        .faq-item p {
+            display: none;
+            color: #bbb;
+            margin-top: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 50px;
+            background: #2c003e;
+            color: #bbb;
+        }
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .image-section img {
+            width: 80%;
+            max-width: 1000px;
+            height: auto;
+        }
+        
+        /* Trading Redefined section styles */
+        .trading-redefined {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .content-left, .content-right {
+            width: 48%;
+        }
+        .content-left {
+            text-align: left;
+        }
+        .content-right img {
+            width: 100%;
+            height: auto;
+            max-width: 500px; /* Adjust as necessary */
+        }
+
+        /* New image frame styles */
+        .image-frame {
+            padding: 10px;
+            border: 5px solid #9b4dff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(155, 77, 255, 0.7);
+            max-width: 100%;
+            margin: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-frame:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(155, 77, 255, 0.9);
+        }
+
+        .image-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .button {
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function toggleFAQ(element) {
+            var answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to $SYNAPSE</h1>
+        <p>The AI-driven trading intelligence that moves before the market reacts.</p>
+        <a href="https://pump.fun" class="button">Buy $SYNAPSE Now</a>
+    </div>
+    
+    <div class="section">
+        <h2>What is $SYNAPSE?</h2>
+        <p>$SYNAPSE is designed to revolutionize trading with AI-powered market predictions, trend detection, and risk assessment. The software is still in development, with updates coming soon.</p>
+        <a href="https://pump.fun" class="button">Buy Now</a>
+    </div>
+
+    <!-- New Section: Trading Redefined -->
+    <div class="section trading-redefined">
+        <div class="content-left">
+            <h2>Trading Redefined</h2>
+            <p>$SYNAPSE will change the trading game by using AI to make market predictions faster, smarter, and more accurate than ever before. Traditional trading relies on human decision-making, but with $SYNAPSE, automated intelligence takes the lead, ensuring you’re always one step ahead of the market.</p>
+        </div>
+        <div class="content-right">
+            <div class="image-frame">
+                <img src="_65739c95-b401-4413-a2eb-e261bed6af17.jpeg" alt="Trading Redefined Image">
+            </div>
+        </div>
+        <a href="https://pump.fun" class="button">Buy Now</a>
+    </div>
+
+    <div class="section">
+        <h2>Tokenomics</h2>
+        <div class="tokenomics">
+            <div class="tokenomics-box">1 Billion Supply</div>
+            <div class="tokenomics-box">Zero Tax</div>
+            <div class="tokenomics-box">Burned LP</div>
+            <div class="tokenomics-box">Solana Chain</div>
+        </div>
+        <a href="https://pump.fun" class="button">Buy Now</a>
+    </div>
+    
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(this)">What is $SYNAPSE?</h3>
+            <p>$SYNAPSE is an AI-powered cryptocurrency trading tool that provides market insights, trend predictions, and rug detection.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(this)">Is the software fully developed?</h3>
+            <p>No, the software is still in development. Future updates will introduce new features and improvements.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(this)">How does the $100 buy work?</h3>
+            <p>The developer will execute a $100 buy at launch, with additional funds used to enhance the project’s growth.</p>
+        </div>
+        <div class="faq-item">
+            <h3 onclick="toggleFAQ(this)">How can I buy $SYNAPSE?</h3>
+            <p>$SYNAPSE can be purchased on Pump.fun. Click the button above to get started.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 $SYNAPSE. All Rights Reserved.</p>
+    </div>
+</body>
+</html>
